@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Parser Runner</title>
+  </head>
+  <body>
+    <h1>Parser Runner</h1>
+    <textarea id="code" rows="15" cols="80"></textarea><br>
+    <button id="run">Run</button>
+    <pre id="output"></pre>
+    <script>
+      document.getElementById('run').onclick = async function(){
+        const code = document.getElementById('code').value;
+        const res = await fetch('/run/', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({text: code})});
+        const data = await res.json();
+        document.getElementById('output').innerText = JSON.stringify(data, null, 2);
+      }
+    </script>
+  </body>
+</html>
