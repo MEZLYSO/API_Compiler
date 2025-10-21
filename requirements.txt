@@ -1,3 +1,10 @@
+django>=5.2.7
+antlr4-python3-runtime>=4.11.1
+antlr4-tools>=0.2.2
+flask>=2.0
+flask_cors>=3.0
+gunicorn>=20.1.0
+whitenoise>=6.5
 django
 antlr4-python3-runtime
 antlr4-tools
